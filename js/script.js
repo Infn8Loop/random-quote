@@ -3,17 +3,6 @@
  */
 
 // JavaScript is awesome.
-var quote = document.getElementById("quote");
-var person = document.getElementById("person");
-var image = document.getElementById("image");
-var randomPick = 0;
-var lastPick = 0;
-var tweetText = undefined;
-var tweetbutton = document.getElementById("tweet-button");
-
-
-$("#tweet-button").hide();
-
 
 var quotes = [
     "Yo Sucka, I pity da fool that don't know dialing 1-800 collect can save the people you call a buck or two.",
@@ -51,9 +40,17 @@ var images = [
     "images/eddie.jpg",
     "images/peter.jpg",
     "images/parrot.png",
-]
+];
 
-tweetText =  (quotes[lastPick] + " ~" + persons[lastPick]);
+
+var quote = document.getElementById("quote");
+var person = document.getElementById("person");
+var image = document.getElementById("image");
+var randomPick = 0;
+var lastPick = 0;
+var tweet = document.getElementById("tweet-button");
+var tweetText =  (quotes[0] + " ~" + persons[0]) ;
+$(tweet).attr("href", ("https://twitter.com/intent/tweet?text=" + tweetText));
 
 $("#get-quote-button").click(function(){
     lastPick = randomPick;
@@ -69,7 +66,7 @@ $("#get-quote-button").click(function(){
     $("#person").show("fold");
     $("#image").show("fold");
     tweetText =  (quotes[randomPick] + " ~" + persons[randomPick]) ;
-    //$(tweetbutton).attr("data-text", tweetText);
+    $(tweet).attr("href", ("https://twitter.com/intent/tweet?text=" + tweetText));
 });
 
 function pickOne(){
@@ -81,44 +78,8 @@ function pickOne(){
     lastPick = randomPick;
 }
 
-
-//
 $.getScript("http://platform.twitter.com/widgets.js");
 twttr.widgets.load();
-//
-$("#set-share").click(function(){
-    twttr.widgets.createShareButton(
-        '/',
-        document.getElementById('tweet-button'),
-        {
-            count: 'none',
-            text: tweetText,
-        }).then(function (el) {
-            console.log("Button created.")
-        });
-
-    $("#tweet-button").show();
-    var deleteme = document.getElementById("twitter-widget-0");
-    var deleteme2 = document.getElementById("twitter-widget-1");
-    var deleteme3 = document.getElementById("twitter-widget-2");
-    var deleteme4 = document.getElementById("twitter-widget-3");
-    var deleteme5 = document.getElementById("twitter-widget-4");
-    var deleteme6 = document.getElementById("twitter-widget-5");
-    var deleteme7 = document.getElementById("twitter-widget-6");
-    var deleteme8 = document.getElementById("twitter-widget-7");
-    setTimeout(function(){
-        $(deleteme).remove();
-        $(deleteme2).remove();
-        $(deleteme3).remove();
-        $(deleteme4).remove();
-        $(deleteme5).remove();
-        $(deleteme6).remove();
-        $(deleteme7).remove();
-        $(deleteme8).remove();
-    }, 10);
-
-});
-
 
 
 
