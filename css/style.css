@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+body {
+    color: #212121;
+    background: rgb(30,87,153);
+    background: -moz-linear-gradient(-45deg,  rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%);
+    background: -webkit-linear-gradient(-45deg,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%);
+    background: linear-gradient(135deg,  rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 );
+
+
+}
+h1 {
+    /*display: inline;*/
+}
+
+h2 {
+    /*display: inline;*/
+}
+.quote-marks {
+    color: #212121;
+}
+.jumbotron {
+    margin-top: 50px;
+    box-shadow: 2px 2px 2px #212121;
+}
+#get-quote-button{
+    font-size: 1em;
+}
+.imageholder img {
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 280px;
+    box-shadow: 2px 2px 2px #212121;
+}
+button {
+    box-shadow: 2px 2px 2px #212121;
+}
+.jumbotron {
+    padding: 10px;
+}
